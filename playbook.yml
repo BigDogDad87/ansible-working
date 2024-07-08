@@ -1,15 +1,14 @@
 ---
 name: Ensure IIS is installed and started 
+hosts: webservers 
+vars: 
+  ansible_connection: 
+  winrm ansible_winrm_transport: 
+  ntlm ansible_winrm_server_cert_validation: 
+  ignore ansible_user: Administrator 
+  ansible_password: JustM300 
+  service_name: IIS Admin Service
 
-  hosts: webservers 
-  vars: 
-    ansible_connection: 
-    winrm ansible_winrm_transport: 
-    ntlm ansible_winrm_server_cert_validation: 
-    ignore ansible_user: Administrator 
-    ansible_password: JustM300 
-    service_name: IIS Admin Service
-    
   tasks:
 
       name: Ensure IIS Server is present 
