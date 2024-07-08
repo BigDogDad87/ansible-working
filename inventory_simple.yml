@@ -2,7 +2,7 @@
  webservers:
    hosts:
      webserver1:
-       ansible_host: <ip address provided for Windows VM>
+       ansible_host: 18.144.176.5
        ansible_user: Administrator
        ansible_password: JustM300
        ansible_connection: winrm
