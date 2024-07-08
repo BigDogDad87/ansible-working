@@ -13,10 +13,10 @@ vars:
 
   - name: Ensure IIS Server is present 
       win_feature: Web-Server 
-      state: present 
-      restart: no 
-      include_sub_features: yes 
-      include_management_tools: yes
+        state: present 
+        restart: no 
+        include_sub_features: yes 
+        include_management_tools: yes
   - name: Ensure latest web files are present 
       win_copy: 
         src: playbook-fun/files/ 
