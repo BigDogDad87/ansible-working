@@ -12,9 +12,8 @@ vars:
   tasks:
 
       name: Ensure IIS Server is present 
-        win_feature: 
-        name: 
-        Web-Server state: present 
+        win_feature: Web-Server 
+        state: present 
         restart: no 
         include_sub_features: yes 
         include_management_tools: yes
