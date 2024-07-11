@@ -54,7 +54,7 @@ def github_repo_present(data):
     return True, False, meta
 
 
-def github_repo_absent(data=None):
+def github_repo_absent(data):
     headers = {
         "Authorization": "token {}" . format(data['github_auth_key'])
     }
