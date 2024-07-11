@@ -1,10 +1,10 @@
 - hosts: localhost
   tasks:
-    # - name: Test that my module works
-    #   github_repo:
-    #   register: result
+    - name: Test that my module works
+      github_repo:
+      register: result
 
-    # - debug: var=result
+    - debug: var=result
 
     - name: Create a github Repo
           github_repo:
