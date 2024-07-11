@@ -55,6 +55,7 @@ def github_repo_present(data):
     meta = {"status": result.status_code, 'response': result.json()}
     return True, False, meta
 
+
 def github_repo_absent(data=None):
     headers = {
         "Authorization": "token {}" . format(data['github_auth_key'])
@@ -70,6 +71,7 @@ def github_repo_absent(data=None):
     else:
         result = {"status": result.status_code, "data": result.json()}
         return True, False, result
+
 
 def main():
 
@@ -106,4 +108,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
