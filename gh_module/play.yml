@@ -1,9 +1,11 @@
 - hosts: localhost
   vars:
     - ansible_python_interpreter: "/usr/bin/python3"
+    - name: github_token
+      prompt: Enter token
     # - github_token: "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"
-  vars_files:
-    - vault/secrets.yml
+  # vars_files:
+  #   - vault/secrets.yml
 
   tasks:
     - name: Create a GitHub Repo
