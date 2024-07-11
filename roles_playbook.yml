@@ -20,3 +20,8 @@
     - create-web-config
     - copy-web-files
     
+
+
+ansible_connection: winrm
+ansible_winrm_transport: ntlm
+ansible_winrm_server_cert_validation: ignore
