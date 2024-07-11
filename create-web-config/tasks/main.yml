@@ -1,9 +1,6 @@
 ---
 # tasks file for index.html
 - name: Create index.html file
-  vars:
-    first: "{{ first_line }}"
-    second: "{{ Second_line }}"
   template:
     src: templates/index.html.j2
     dest: c:/inetpub/wwwroot/index.html

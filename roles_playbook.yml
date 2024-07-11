@@ -14,6 +14,9 @@
       database_name: mydatabase
       db_username: sqluser
       db_password: Pa$$w0rd
+  set_fact:
+    first: "{{ first_line }}"
+    second: "{{ Second_line }}"
   roles:
     - create-user
     - install-iis
