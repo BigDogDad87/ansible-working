@@ -3,7 +3,7 @@
 - name: Setting Facts
   set_fact:
     first1: "{{ first }}"
-    second1: "{{ Secondse }}"
+    second1: "{{ Second }}"
 
 - name: Create index.html file
   template:
