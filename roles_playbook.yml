@@ -17,6 +17,6 @@
 
   roles:
     # - create-user
-    # - install-iis
+    - install-iis
     - create-web-config
     # - copy-web-files
