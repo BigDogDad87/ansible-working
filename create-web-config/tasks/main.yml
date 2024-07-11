@@ -2,8 +2,8 @@
 # tasks file for index.html
 - name: Setting Facts
   set_fact:
-    first1: "{{ first }}"
-    second1: "{{ Second }}"
+    first1: "{{ first_line }}"
+    second1: "{{ second_line }}"
 
 - name: Create index.html file
   template:

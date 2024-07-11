@@ -14,10 +14,9 @@
       database_name: mydatabase
       db_username: sqluser
       db_password: Pa$$w0rd    
-      first: "{{ first_line }}"
-      second: "{{ Second_line }}"
 
   roles:
     - create-user
     - install-iis
     - create-web-config
+    # - copy-web-files
