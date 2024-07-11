@@ -1,6 +1,6 @@
 ---
 - name: Install IIS and configure website
-  hosts: windows
+  hosts: all
   become: yes
   become_method: runas
   become_user: Administrator
@@ -18,7 +18,7 @@
     - create-user
     - install-iis
     - create-web-config
-    - copy-web-files
+    # - copy-web-files
     
 
 
