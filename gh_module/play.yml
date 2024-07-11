@@ -16,5 +16,5 @@
         has_issues: no
         has_wiki: no
         has_downloads: no
-        state: present
+        # state: present
       register: result
