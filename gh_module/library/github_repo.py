@@ -35,8 +35,8 @@ def github_repo_present(data):
 
     api_key = data['github_auth_key']
 
-    # del data['state']
-    # del data['github_auth_key']
+    del data['state']
+    del data['github_auth_key']
 
     headers = {
         "Authorization": "token {}" . format(api_key)
