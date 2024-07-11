@@ -2,10 +2,11 @@
   vars:
     - github_token: "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"
     - ansible_python_interpreter: "/usr/bin/python3"
+
   tasks:
     - name: Create a GitHub Repo
       github_repo:
-        github_auth_key:  "{{github_token}}" 
+        github_auth_key: "{{github_token}}" 
         username: "BigDogDad87"
         name: "Hello-World"
         description: "First repo created with custom Ansible module"
