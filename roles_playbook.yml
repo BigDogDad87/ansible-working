@@ -18,7 +18,6 @@
     - create-user
     - install-iis
     - create-web-config
-    # - copy-web-files
     
 
 
