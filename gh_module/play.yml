@@ -11,8 +11,8 @@
 
     - name: Create a GitHub Repo
       github_repo:
-        github_auth_key:  "{{github_token}}" 
-        username: "YOUR GITHUB USERNAME HERE"
+        github_auth_key: "{{github_token}}" 
+        username: "BigDogDad87"
         name: "Hello-World"
         description: "First repo created with custom Ansible module"
         private: yes
