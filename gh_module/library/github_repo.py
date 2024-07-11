@@ -54,21 +54,21 @@ def github_repo_present(data):
     return True, False, meta
 
 
-# def github_repo_absent(data=None):
-#     headers = {
-#         "Authorization": "token {}" . format(data['github_auth_key'])
-#     }
-#     url = "{}/repos/{}/{}" . format(api_url, data['username'], data['name'])
-#     result = requests.delete(url, headers=headers)
+def github_repo_absent(data=None):
+    headers = {
+        "Authorization": "token {}" . format(data['github_auth_key'])
+    }
+    url = "{}/repos/{}/{}" . format(api_url, data['username'], data['name'])
+    result = requests.delete(url, headers=headers)
 
-#     if result.status_code == 204:
-#         return False, True, {"status": "SUCCESS"}
-#     if result.status_code == 404:
-#         result = {"status": result.status_code, "data": result.json()}
-#         return False, False, result
-#     else:
-#         result = {"status": result.status_code, "data": result.json()}
-#         return True, False, result
+    if result.status_code == 204:
+        return False, True, {"status": "SUCCESS"}
+    if result.status_code == 404:
+        result = {"status": result.status_code, "data": result.json()}
+        return False, False, result
+    else:
+        result = {"status": result.status_code, "data": result.json()}
+        return True, False, result
 
 
 def main():
