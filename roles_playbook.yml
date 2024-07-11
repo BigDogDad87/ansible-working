@@ -13,7 +13,9 @@
       ip_address: 10.0.0.1
       database_name: mydatabase
       db_username: sqluser
-      db_password: Pa$$w0rd
+      db_password: Pa$$w0rd    
+      first: "{{ first_line }}"
+      second: "{{ Second_line }}"
 
   roles:
     - create-user
