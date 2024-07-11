@@ -5,6 +5,43 @@ import requests
 api_url = "https://api.github.com"
 
 
+def main():
+
+    fields = {
+        "github_auth_key": {"required": True, "type": "str"},
+        "username": {"required": True, "type": "str"},
+        "name": {"required": True, "type": "str"},
+        "description": {"required": False, "type": "str"},
+        "private": {"default": False, "type": "bool"},
+        "has_issues": {"default": True, "type": "bool"},
+        "has_wiki": {"default": True, "type": "bool"},
+        "has_downloads": {"default": True, "type": "bool"},
+        "state": {
+            "default": "present",
+            "choices": ['present', 'absent'],
+            "type": 'str'
+        },
+    }
+
+    choice_map = {
+        "present": github_repo_present,
+        "absent": github_repo_absent,
+    }
+
+    module = AnsibleModule(argument_spec=fields)
+    is_error, has_changed, result = choice_map.get(
+        module.params['state'])(module.params)
+
+    if not is_error:
+        module.exit_json(changed=has_changed, meta=result)
+    else:
+        module.fail_json(msg="Error deleting repo", meta=result)
+
+
+if __name__ == '__main__':
+    main()
+
+
 def github_repo_present(data):
 
     api_key = data['github_auth_key']
@@ -43,39 +80,5 @@ def github_repo_absent(data=None):
         result = {"status": result.status_code, "data": result.json()}
         return True, False, result
 
-def main():
 
-    fields = {
-        "github_auth_key": {"required": True, "type": "str"},
-        "username": {"required": True, "type": "str"},
-        "name": {"required": True, "type": "str"},
-        "description": {"required": False, "type": "str"},
-        "private": {"default": False, "type": "bool"},
-        "has_issues": {"default": True, "type": "bool"},
-        "has_wiki": {"default": True, "type": "bool"},
-        "has_downloads": {"default": True, "type": "bool"},
-        "state": {
-            "default": "present",
-            "choices": ['present', 'absent'],
-            "type": 'str'
-        },
-    }
-
-    choice_map = {
-        "present": github_repo_present,
-        "absent": github_repo_absent,
-    }
-
-    module = AnsibleModule(argument_spec=fields)
-    is_error, has_changed, result = choice_map.get(
-        module.params['state'])(module.params)
-
-    if not is_error:
-        module.exit_json(changed=has_changed, meta=result)
-    else:
-        module.fail_json(msg="Error deleting repo", meta=result)
-
-
-if __name__ == '__main__':
-    main()
 
