@@ -7,14 +7,14 @@
     - debug: var=result
 
     - name: Create a github Repo
-          github_repo:
-            github_auth_key: "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"
-            username: "BigDogDad87"
-            name: "Hello-World"
-            description: "This is your first repository"
-            private: yes
-            has_issues: no
-            has_wiki: no
-            has_downloads: no
-            state: present
-          register: result
+      github_repo:
+        github_auth_key: "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"
+        username: "BigDogDad87"
+        name: "Hello-World"
+        description: "This is your first repository"
+        private: yes
+        has_issues: no
+        has_wiki: no
+        has_downloads: no
+        state: present
+      register: result
