@@ -1,7 +1,8 @@
 ---
 - name: create web.config file
-  vars:
-    ip_address: 50.18.3.42
+  vars_files:
+    - vault/secrets.yml
+    - vault/win_connect.yml
   template:
     src: templates/web.config.j2
     dest: c:\inetpub\wwwroot\web.config
